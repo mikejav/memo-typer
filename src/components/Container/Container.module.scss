@@ -1,0 +1,6 @@
+@import 'src/styles/breakpoint.mixin';
+
+.Container {
+  margin: 0 auto;
+  width: var(--container-width);
+}

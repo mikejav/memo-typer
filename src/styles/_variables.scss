@@ -1,0 +1,62 @@
+@import "src/styles/breakpoint.mixin";
+
+:root {
+  --color-primary: #03a9f4;
+  --color-secondary: #eeeeee;
+  --color-bg: #ffffff;
+  --color-border-low-contrast: #ececec;
+
+  --color-white: #ffffff;
+
+  --padding-xs: 0.1rem;
+  --padding-sm: 0.25rem;
+  --padding-md: 0.5rem;
+  --padding-lg: 1rem;
+  --padding-xl: 1.5rem;
+
+  --margin-xs: 0.1rem;
+  --margin-sm: 0.25rem;
+  --margin-md: 0.5rem;
+  --margin-lg: 1rem;
+  --margin-xl: 1.5rem;
+
+  --bar-lineHeight-xs: 1.5rem;
+  --bar-lineHeight-sm: 1.5rem;
+  --bar-lineHeight-md: 1.5rem;
+  --bar-lineHeight-lg: 1.5rem;
+  --bar-lineHeight-xl: 3.5rem;
+
+  --box-shadow-sm: rgb(229, 229, 229) 0px 1px 2px;
+
+  --border-contrast-xs: rgba(0, 0, 0, 0.1);
+  --border-contrast-sm: rgba(0, 0, 0, 0.2);
+  --border-contrast-md: rgba(0, 0, 0, 0.3);
+  --border-contrast-lg: rgba(0, 0, 0, 0.4);
+  --border-contrast-xl: rgba(0, 0, 0, 0.5);
+
+  --sidebar-width: 85%;
+  @include breakpoint-up(sm) {
+    --sidebar-width: 250px;
+  }
+}
+
+// TODO: move to variables/container
+:root {
+  --container-width: 100%;
+
+  @include breakpoint-up(sm) {
+    --container-width: 540px;
+  }
+
+  @include breakpoint-up(md) {
+    --container-width: 720px;
+  }
+
+  @include breakpoint-up(lg) {
+    --container-width: 960px;
+  }
+
+  @include breakpoint-up(xl) {
+    --container-width: 1140px;
+  }
+}
