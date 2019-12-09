@@ -1,12 +1,12 @@
-import React from 'react';
 import {
-  LayoutWrapper,
-  LayoutNavbar,
+  Container,
   LayoutContent,
-  Container
+  LayoutNavbar,
+  LayoutWrapper
 } from 'components';
-import { BrowserRouter, Switch, Route, Redirect, Link } from 'react-router-dom';
-import { LevelList, Learn } from 'pages';
+import { Learn, LevelList } from 'pages';
+import React from 'react';
+import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
 
 const App: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const App: React.FC = () => {
           <Container>
             <Switch>
               <Route exact path="/" component={LevelList} />
-              <Route path="/learn/:level" component={Learn} />
+              <Route path="/learn/:levelName" component={Learn} />
               <Redirect to="/" />
             </Switch>
           </Container>
