@@ -34,6 +34,10 @@
   --border-contrast-lg: rgba(0, 0, 0, 0.4);
   --border-contrast-xl: rgba(0, 0, 0, 0.5);
 
+  --border-radious-sm: 2px;
+  --border-radious-md: 3px;
+  --border-radious-lg: 5px;
+
   --sidebar-width: 85%;
   @include breakpoint-up(sm) {
     --sidebar-width: 250px;
