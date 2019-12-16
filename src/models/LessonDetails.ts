@@ -1,6 +1,6 @@
-import { Phrase } from 'state/models/Phrase';
+import { Phrase } from 'models/Phrase';
 
-export interface LessonBasic {
+export interface LessonDetails {
   id: string;
   name: string;
   description: string;
