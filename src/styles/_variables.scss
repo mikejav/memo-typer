@@ -8,35 +8,37 @@
 
   --color-white: #ffffff;
 
-  --padding-xs: 0.1rem;
-  --padding-sm: 0.25rem;
-  --padding-md: 0.5rem;
-  --padding-lg: 1rem;
-  --padding-xl: 1.5rem;
+  --padding-1: 0.1rem;
+  --padding-2: 0.25rem;
+  --padding-3: 0.5rem;
+  --padding-4: 1rem;
+  --padding-5: 1.5rem;
 
-  --margin-xs: 0.1rem;
-  --margin-sm: 0.25rem;
-  --margin-md: 0.5rem;
-  --margin-lg: 1rem;
-  --margin-xl: 1.5rem;
+  --margin-1: 0.1rem;
+  --margin-2: 0.25rem;
+  --margin-3: 0.5rem;
+  --margin-4: 1rem;
+  --margin-5: 1.5rem;
 
-  --bar-lineHeight-xs: 1.5rem;
-  --bar-lineHeight-sm: 1.5rem;
-  --bar-lineHeight-md: 1.5rem;
-  --bar-lineHeight-lg: 1.5rem;
-  --bar-lineHeight-xl: 3.5rem;
+  --bar-lineHeight-1: 1.5rem;
+  --bar-lineHeight-2: 1.5rem;
+  --bar-lineHeight-3: 1.5rem;
+  --bar-lineHeight-4: 1.5rem;
+  --bar-lineHeight-5: 3.5rem;
 
   --box-shadow-sm: rgb(229, 229, 229) 0px 1px 2px;
 
-  --border-contrast-xs: rgba(0, 0, 0, 0.1);
-  --border-contrast-sm: rgba(0, 0, 0, 0.2);
-  --border-contrast-md: rgba(0, 0, 0, 0.3);
-  --border-contrast-lg: rgba(0, 0, 0, 0.4);
-  --border-contrast-xl: rgba(0, 0, 0, 0.5);
+  --border-contrast-1: rgba(0, 0, 0, 0.1);
+  --border-contrast-2: rgba(0, 0, 0, 0.2);
+  --border-contrast-3: rgba(0, 0, 0, 0.3);
+  --border-contrast-4: rgba(0, 0, 0, 0.4);
+  --border-contrast-5: rgba(0, 0, 0, 0.5);
 
-  --border-radious-sm: 2px;
-  --border-radious-md: 3px;
-  --border-radious-lg: 5px;
+  --border-radious-1: 2px;
+  --border-radious-2: 3px;
+  --border-radious-3: 5px;
+
+  --card-background: #fff;
 
   --sidebar-width: 85%;
   @include breakpoint-up(sm) {
