@@ -2,9 +2,11 @@
 
 @import "variables";
 @import "breakpoint.mixin";
+@import "outer-spacing";
 
 body {
   background: var(--color-bg);
   padding: 0;
   margin: 0;
+  font-family: Arial, sans-serif; //TODO: fonts
 }
