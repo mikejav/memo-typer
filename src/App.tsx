@@ -4,7 +4,7 @@ import {
   LayoutNavbar,
   LayoutWrapper
 } from 'components';
-import { Learn, LevelList } from 'pages';
+import { Learn, LessonsList } from 'pages';
 import React from 'react';
 import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ const App: React.FC = () => {
         <LayoutContent>
           <Container>
             <Switch>
-              <Route exact path="/" component={LevelList} />
+              <Route exact path="/" component={LessonsList} />
               <Route path="/learn/:levelName" component={Learn} />
               <Redirect to="/" />
             </Switch>

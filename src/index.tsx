@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom';
 import './styles/index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { rootReducer } from 'state/rootReducer';
+import { rootStore } from './state/rootStore';
+import { LessonsEffects } from './state/lessons/lessons.effects';
 
-const store = createStore(rootReducer);
+rootStore.dispatch(LessonsEffects.loadLessonsIfNeeded());
+setTimeout(() => {
+}, 500);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
+  <Provider store={rootStore}>
+    <App/>
   </Provider>,
   document.getElementById('root')
 );
