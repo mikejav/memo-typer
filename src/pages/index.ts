@@ -1,7 +1,7 @@
 import { Learn } from './learn/learn';
-import { LevelList } from './level-list/level-list';
+import { LessonsList } from 'pages/level-list/lessons-list';
 
 export {
-  LevelList,
+  LessonsList,
   Learn,
 };
