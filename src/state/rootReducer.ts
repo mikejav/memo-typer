@@ -1,11 +1,47 @@
-import { LessonBasic } from './models/LessonBasic';
 import { combineReducers } from 'redux';
-import { lessons } from 'state/reducers/lessons';
+import { selectedLessonReducer } from 'state/selectedLesson/selected-lesson.reducer';
+import { lessonsReducer } from 'state/lessons/lessons.reducer';
 
-interface RootState {
-  lessons: LessonBasic[];
-}
+export type RootState = ReturnType<typeof rootReducer>;
 
-export const rootReducer = combineReducers<RootState>({
-  lessons: lessons as any,
+export const rootReducer = combineReducers({
+  lessons: lessonsReducer,
+  selectedLesson: selectedLessonReducer
 });
+
+
+/*  
+
+modele:
+
+LessonBasic:
+  id: string,
+  name: string,
+  description: string,
+
+LessonDetails:
+  id: string,
+  name: string,
+  description: string,
+  phrases: [ // lista słówek / fraz
+    {id: string, content: string}
+  ]
+
+ {
+   lessons: [
+      {
+        id: string,
+        name: string,
+        description: string,
+        phrases: [ // lista słówek / fraz
+          {id: string, content: string}
+        ]
+      }
+   ],
+
+   progress: [
+     good: number,
+     bad: number,
+   ]
+ }
+ */
