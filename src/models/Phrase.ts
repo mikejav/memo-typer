@@ -1,4 +1,5 @@
 export interface Phrase {
   id: string;
-  content: string;
+  term: string;
+  definition: string;
 }

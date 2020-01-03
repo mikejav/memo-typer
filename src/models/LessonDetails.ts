@@ -4,5 +4,6 @@ export interface LessonDetails {
   id: string;
   name: string;
   description: string;
+  coverLink: string;
   phrases: Phrase[],
 }
