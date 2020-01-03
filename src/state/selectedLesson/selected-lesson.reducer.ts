@@ -8,6 +8,7 @@ const initialState: SelectedLesson = {
     id: '',
     name: '',
     description: '',
+    coverLink: '',
     phrases: []
   }
 };
