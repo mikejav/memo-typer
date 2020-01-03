@@ -1,14 +1,9 @@
 import { LessonsActions } from './lessons.actions';
 import { ajax } from 'rxjs/ajax';
 import { delay } from 'rxjs/operators';
-import { ThunkAction } from 'redux-thunk';
-import { RootState } from '../rootReducer';
-
-//TODO: wyeksportować to do jakichś sharów:
-type ThunkResult<R = void> = ThunkAction<R, RootState, undefined, any>;
+import { ThunkResult } from 'state/ThunkResult';
 
 export class LessonsEffects {
-
 
   public static loadLessonsIfNeeded = (): ThunkResult => (dispatch, getState) => {
     const { lessons: { isFetching } } = getState();
