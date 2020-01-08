@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import { useLessonsSelector } from 'selectors';
-import { Container } from '@material-ui/core';
+import { Container, CardContent, CardActions, Card } from '@material-ui/core';
 import { LessonCard } from 'pages/level-list/components/LessonCard';
 import Grid from '@material-ui/core/Grid';
 import { LessonsEffects } from 'state/lessons/lessons.effects';
@@ -22,7 +22,7 @@ export const LessonsList: FC = () => {
       ) : (
         <Grid container spacing={2}>
           {lessons.lessonsList.map(lesson => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={lesson.id}>
+            <Grid item style={{display: 'flex'}} xs={12} sm={6} md={4} key={lesson.id} alignItems={'stretch'}>
               <LessonCard lesson={lesson}/>
             </Grid>
           ))}
