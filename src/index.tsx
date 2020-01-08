@@ -4,12 +4,7 @@ import './styles/index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import { rootStore } from './state/rootStore';
-import { LessonsEffects } from './state/lessons/lessons.effects';
-
-rootStore.dispatch(LessonsEffects.loadLessonsIfNeeded());
-setTimeout(() => {
-}, 500);
+import { rootStore } from 'state/rootStore';
 
 ReactDOM.render(
   <Provider store={rootStore}>
