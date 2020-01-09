@@ -10,7 +10,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import CardHeader from '@material-ui/core/CardHeader';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
-import { RouterLink } from 'shared/components/RouterLink/RouterLink';
+import { RouterLink } from 'shared/components';
 import Typography from '@material-ui/core/Typography';
 
 export const LessonWrite: FC = () => {

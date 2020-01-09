@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import { LessonBasic } from 'models/LessonBasic';
 import { CardActionArea, makeStyles } from '@material-ui/core';
-import { RouterLink } from 'shared/components/RouterLink/RouterLink';
+import { RouterLink } from 'shared/components';
 
 const useStyles = makeStyles({
   card: {
@@ -30,6 +30,7 @@ export const LessonCard: FC<LessonCardProps> = ({ lesson }) => {
   return (
     <Card key={lesson.id} className={classes.card}>
       <CardActionArea component={RouterLink} to={`/lesson/${lesson.id}`} className={classes.actionArea}>
+        {/* TODO: ten height w zależności od breakpointów: */}
         <CardMedia
           image={lesson.coverLink}
           title={lesson.name}

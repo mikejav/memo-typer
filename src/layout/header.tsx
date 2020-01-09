@@ -2,19 +2,13 @@ import React, { Fragment } from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Link from '@material-ui/core/Link';
-import { RouterLink } from 'shared/components/RouterLink/RouterLink';
 import Typography from '@material-ui/core/Typography';
 import { AccountCircle } from '@material-ui/icons';
-import { AppBar, Badge, Container, createStyles, fade, InputBase, makeStyles, Theme } from '@material-ui/core';
+import { AppBar, Container, createStyles, makeStyles, Theme } from '@material-ui/core';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import SearchIcon from '@material-ui/icons/Search';
-import withWidth from '@material-ui/core/withWidth';
-import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
+import { RouterLink } from 'shared/components';
 
 
 const useStyles = makeStyles((theme: Theme) =>
