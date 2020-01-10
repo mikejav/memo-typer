@@ -2,19 +2,19 @@ import React, { FC, useEffect, useRef } from 'react';
 
 interface LoadProps {
   loadAction: Function,
-  isLoadedPredicate: Function,
+  isLoadedSupplier: Function,
   cancelLoading?: Function,
   LoadingComponent: FC,
   LoadedComponent: FC
 }
 
 export const Load: FC<LoadProps> = (
-  { loadAction, isLoadedPredicate, cancelLoading, LoadingComponent, LoadedComponent }
+  { loadAction, isLoadedSupplier, cancelLoading, LoadingComponent, LoadedComponent }
 ) => {
   const isLoadingTriggeredRef = useRef(false);
 
   useEffect(() => {
-    if (!isLoadedPredicate()) {
+    if (!isLoadedSupplier()) {
       loadAction();
 
       isLoadingTriggeredRef.current = true;
@@ -29,7 +29,7 @@ export const Load: FC<LoadProps> = (
     }
   }, []);
 
-  if (isLoadedPredicate()) {
+  if (isLoadedSupplier()) {
     isLoadingTriggeredRef.current = false;
     return <LoadedComponent/>;
   }
