@@ -1,34 +1,22 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { useLessonsSelector } from 'selectors';
-import { Container, CardContent, CardActions, Card } from '@material-ui/core';
-import { LessonCard } from 'pages/level-list/components/LessonCard';
-import Grid from '@material-ui/core/Grid';
 import { LessonsEffects } from 'state/lessons/lessons.effects';
 import { useDispatch } from 'react-redux';
+import { Load } from 'shared/components';
+import { LessonsListLoaded } from 'pages/level-list/lessons-list-loaded';
+import { LessonsListLoading } from 'pages/level-list/lessons-list-loading';
 
 export const LessonsList: FC = () => {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(LessonsEffects.loadLessonsIfNeeded());
-  }, []);
-
   const lessons = useLessonsSelector();
 
   return (
-    <Container maxWidth="md">
-      {lessons.isFetching ? (
-        <div>Loading...</div>
-      ) : (
-        <Grid container spacing={2}>
-          {lessons.lessonsList.map(lesson => (
-            <Grid item style={{display: 'flex'}} xs={12} sm={6} md={4} key={lesson.id}>
-              <LessonCard lesson={lesson}/>
-            </Grid>
-          ))}
-        </Grid>
-      )}
-    </Container>
+    <Load
+      isLoadedSupplier={() => lessons.lessonsList.length}
+      loadAction={() => dispatch(LessonsEffects.load())}
+      cancelLoading={() => console.log('TODO: loadingcancelation method: WIn win win!!1')}
+      LoadingComponent={LessonsListLoading}
+      LoadedComponent={LessonsListLoaded}
+    />
   );
-  // return <div>level list</div>;
 };
