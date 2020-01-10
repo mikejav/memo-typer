@@ -27,7 +27,7 @@ const App: React.FC = () => {
 
           <Container maxWidth="md" style={{ paddingTop: '1rem' }}>
             <Switch>
-              <Route exact path="/" component={LessonsList}/>
+              <Route path="/" exact component={LessonsList}/>
               <Route path="/lesson/:lessonId" component={LessonOverview} exact/>
               <Route path="/lesson/:lessonId/write" component={LessonWrite} exact/>
               <Redirect to="/"/>
