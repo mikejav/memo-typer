@@ -5,13 +5,7 @@ import { ThunkResult } from 'state/ThunkResult';
 
 export class LessonsEffects {
 
-  public static loadLessonsIfNeeded = (): ThunkResult => (dispatch, getState) => {
-    const { lessons: { isFetching } } = getState();
-
-    if (isFetching) {
-      return;
-    }
-
+  public static load = (): ThunkResult => (dispatch) => {
     dispatch(LessonsActions.loadRequest());
 
     ajax.get(`/api/lessons.json`)
@@ -24,6 +18,16 @@ export class LessonsEffects {
           dispatch(LessonsActions.loadFailure(err.status));
         }
       );
+  };
+
+  public static loadIfNeeded = (): ThunkResult => (dispatch, getState) => {
+    const { lessons: { isFetching } } = getState();
+
+    if (isFetching) {
+      return;
+    }
+
+    LessonsEffects.load()(dispatch, getState, undefined);
   };
 
 }
