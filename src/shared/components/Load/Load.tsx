@@ -1,20 +1,20 @@
 import React, { FC, useEffect, useRef } from 'react';
 
 interface LoadProps {
-  loadAction: Function,
-  isLoadedSupplier: Function,
-  cancelLoading?: Function,
-  LoadingComponent: FC,
-  LoadedComponent: FC
+  loadAction: Function;
+  isLoaded: any;
+  cancelLoading?: Function;
+  LoadingComponent: FC;
+  LoadedComponent: FC;
 }
 
 export const Load: FC<LoadProps> = (
-  { loadAction, isLoadedSupplier, cancelLoading, LoadingComponent, LoadedComponent }
+  { loadAction, isLoaded, cancelLoading, LoadingComponent, LoadedComponent }
 ) => {
   const isLoadingTriggeredRef = useRef(false);
 
   useEffect(() => {
-    if (!isLoadedSupplier()) {
+    if (!isLoaded) {
       loadAction();
 
       isLoadingTriggeredRef.current = true;
@@ -27,9 +27,10 @@ export const Load: FC<LoadProps> = (
         };
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (isLoadedSupplier()) {
+  if (isLoaded) {
     isLoadingTriggeredRef.current = false;
     return <LoadedComponent/>;
   }

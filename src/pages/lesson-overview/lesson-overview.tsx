@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { SelectedLessonEffects } from 'state/selectedLesson/selected-lesson.effects';
 import { useSelectedLessonSelector } from 'selectors';
@@ -9,15 +9,18 @@ import { LessonOverviewLoading } from 'pages/lesson-overview/lesson-overview-loa
 
 
 export const LessonOverview: FC = () => {
-  const { lessonId } = useParams();
   const dispatch = useDispatch();
+  const { lessonId } = useParams();
   const { lessonDetails } = useSelectedLessonSelector();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const loadAction = useCallback(() => dispatch(SelectedLessonEffects.loadSelectedLesson(lessonId!)), []);
+  const cancelLoading = useCallback(() => console.log('TODO: loadingcancelation method: WIn win win!!2'), []);
 
   return (
     <Load
-      isLoadedSupplier={() => lessonDetails.id === lessonId}
-      loadAction={() => dispatch(SelectedLessonEffects.loadSelectedLesson(lessonId!))}
-      cancelLoading={() => console.log('TODO: loadingcancelation method: WIn win win!!2')}
+      isLoaded={lessonDetails.id === lessonId}
+      loadAction={loadAction}
+      cancelLoading={cancelLoading}
       LoadingComponent={LessonOverviewLoading}
       LoadedComponent={LessonOverviewLoaded}
     />
