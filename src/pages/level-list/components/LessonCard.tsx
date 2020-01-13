@@ -31,6 +31,7 @@ export const LessonCard: FC<LessonCardProps> = ({ lesson }) => {
     <Card key={lesson.id} className={classes.card}>
       <CardActionArea component={RouterLink} to={`/lesson/${lesson.id}`} className={classes.actionArea}>
         {/* TODO: ten height w zależności od breakpointów: */}
+        {/* TODO: style przenieść do use styles u góry^ */}
         <CardMedia
           image={lesson.coverLink}
           title={lesson.name}
