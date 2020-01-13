@@ -4,7 +4,7 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { Container, CssBaseline, ThemeProvider } from '@material-ui/core';
 import { LessonWrite } from 'pages/lesson-write/lesson-write';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
-import Header from 'layout/header';
+import { Layout } from 'layout';
 
 // TODO: move theme to another file
 const theme = createMuiTheme({
@@ -23,16 +23,15 @@ const App: React.FC = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline/>
         <BrowserRouter>
-          <Header/>
 
-          <Container maxWidth="md" style={{ paddingTop: '1rem' }}>
+          <Layout>
             <Switch>
               <Route path="/" exact component={LessonsList}/>
               <Route path="/lesson/:lessonId" component={LessonOverview} exact/>
               <Route path="/lesson/:lessonId/write" component={LessonWrite} exact/>
               <Redirect to="/"/>
             </Switch>
-          </Container>
+          </Layout>
 
         </BrowserRouter>
       </ThemeProvider>
