@@ -1,27 +1,15 @@
-import React, { useCallback } from 'react';
+import React, { FC, useCallback } from 'react';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import { AccountCircle } from '@material-ui/icons';
-import {
-  AppBar,
-  Container,
-  createStyles,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  makeStyles,
-  Popover,
-  Theme,
-  useMediaQuery,
-  useTheme
-} from '@material-ui/core';
+import { AppBar, Container, createStyles, makeStyles, Theme, useMediaQuery, useTheme } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { RouterLink } from 'shared/components';
 import { LayoutActions } from 'state/layout/layout.actions';
 import { useDispatch } from 'react-redux';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import { LayoutMenu } from 'layout/LayoutMenu';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -37,12 +25,12 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up('sm')]: {
         display: 'block'
       }
-    },
+    }
   })
 );
 
 
-export const LayoutHeader: React.FC = () => {
+export const LayoutHeader: FC = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -88,38 +76,7 @@ export const LayoutHeader: React.FC = () => {
           >
             <AccountCircle/>
           </IconButton>
-
-          <Popover
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'right',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            open={isMenuOpen}
-            anchorEl={anchorEl}
-            onClose={handleMenuClose}
-          >
-            <ListItem button dense>
-              <ListItemIcon><InboxIcon /></ListItemIcon>
-              <ListItemText primary={'Profil'} />
-            </ListItem>
-            <ListItem button dense>
-              <ListItemIcon><InboxIcon /></ListItemIcon>
-              <ListItemText primary={'Ulubione'} />
-            </ListItem>
-            <ListItem button dense>
-              <ListItemIcon><InboxIcon /></ListItemIcon>
-              <ListItemText primary={'Statystyki'} />
-            </ListItem>
-            <ListItem button dense>
-              <ListItemIcon><InboxIcon /></ListItemIcon>
-              <ListItemText primary={'Wyloguj się'} />
-            </ListItem>
-          </Popover>
-
+          <LayoutMenu isMenuOpen={isMenuOpen} onMenuClose={handleMenuClose} anchorEl={anchorEl}/>
         </Toolbar>
       </Container>
     </AppBar>
