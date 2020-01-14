@@ -17,7 +17,7 @@ import { RouterLink } from 'shared/components';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     profileAvatar: {
-      marginRight: 8
+      marginRight: 12
     }
   })
 );

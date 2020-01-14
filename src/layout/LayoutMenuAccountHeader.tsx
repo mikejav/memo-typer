@@ -5,4 +5,4 @@ export const LayoutMenuAccountHeader: FC = () => {
   return (
     <div>LayoutMenuAccountHeader component</div>
   );
-}
+};
