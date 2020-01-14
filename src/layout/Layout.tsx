@@ -11,7 +11,9 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       paddingTop: '1rem',
-      flexGrow: 1
+      flexGrow: 1,
+      display: 'flex',
+      flexDirection: 'column',
     }
   })
 );
