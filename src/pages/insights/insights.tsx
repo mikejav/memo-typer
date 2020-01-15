@@ -15,7 +15,6 @@ export const Insights: FC = () => {
     <Load
       isLoaded={insights.lastFetchedAt}
       loadAction={loadAction}
-      cancelLoading={() => {}}
       LoadingComponent={InsightsLoading}
       LoadedComponent={InsightsLoaded}
     />
