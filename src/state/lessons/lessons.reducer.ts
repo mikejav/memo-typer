@@ -1,11 +1,14 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { LessonsActions } from './lessons.actions';
-import { Lessons } from './Lessons';
+import { StateLazyList } from 'shared/interfaces/StateLazyList';
+import { LessonBasic } from 'models/LessonBasic';
 
-const initialState: Lessons = {
+const initialState: StateLazyList<LessonBasic> = {
   isFetching: false,
   error: null,
-  lessonsList: []
+  lastFetchedAt: 0,
+  isLastChunkLoaded: false,
+  data: []
 };
 
 export const lessonsReducer = createReducer(initialState, {
@@ -15,7 +18,8 @@ export const lessonsReducer = createReducer(initialState, {
 
   [LessonsActions.loadSuccess.type]: (state, { payload }) => {
     state.isFetching = false;
-    state.lessonsList = payload;
+    state.lastFetchedAt = Date.now();
+    state.data = payload;
   },
 
   [LessonsActions.loadFailure.type]: (state, { payload }) => {

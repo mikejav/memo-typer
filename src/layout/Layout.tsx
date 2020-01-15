@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: '1rem',
       flexGrow: 1,
       display: 'flex',
-      flexDirection: 'column',
+      flexDirection: 'column'
     }
   })
 );

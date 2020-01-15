@@ -5,9 +5,9 @@ import { LessonDetails } from 'models/LessonDetails';
 export abstract class SelectedLessonEffects {
 
   public static loadSelectedLesson = (lessonId: string): ThunkResult => (dispatch, getState) => {
-    const { selectedLesson: { isFetching, lessonDetails } } = getState();
+    const { selectedLesson: { isFetching, data } } = getState();
 
-    if (isFetching || lessonId === lessonDetails.id) {
+    if (isFetching || lessonId === data.id) {
       return;
     }
 

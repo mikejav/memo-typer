@@ -10,7 +10,9 @@ import { LessonWriteLoading } from 'pages/lesson-write/lesson-write-loading';
 export const LessonWrite: FC = () => {
   const dispatch = useDispatch();
   const { lessonId } = useParams();
-  const { lessonDetails } = useSelectedLessonSelector();
+  // TODO: selektor!!
+  const selectedLesson = useSelectedLessonSelector();
+  const lessonDetails = selectedLesson.data;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const loadAction = useCallback(() => dispatch(SelectedLessonEffects.loadSelectedLesson(lessonId!)), []);
   const cancelLoading = useCallback(() => console.log('TODO: loadingcancelation method: WIn win win!!3'), []);

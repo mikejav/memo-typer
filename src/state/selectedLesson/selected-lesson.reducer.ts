@@ -1,10 +1,13 @@
-import { SelectedLesson } from 'state/selectedLesson/SelectedLesson';
 import { SelectedLessonActions } from 'state/selectedLesson/selected-lesson.actions';
 import { createReducer } from '@reduxjs/toolkit';
+import { LessonDetails } from 'models/LessonDetails';
+import { State } from 'shared/interfaces/State';
 
-const initialState: SelectedLesson = {
+const initialState: State<LessonDetails> = {
   isFetching: false,
-  lessonDetails: {
+  error: null,
+  lastFetchedAt: 0,
+  data: {
     id: '',
     name: '',
     description: '',
@@ -20,7 +23,8 @@ export const selectedLessonReducer = createReducer(initialState, {
 
   [SelectedLessonActions.loadSuccess.type]: (state, { payload }) => {
     state.isFetching = false;
-    state.lessonDetails = payload;
+    state.lastFetchedAt = Date.now();
+    state.data = payload;
   },
 
   [SelectedLessonActions.loadFailure.type]: state => {

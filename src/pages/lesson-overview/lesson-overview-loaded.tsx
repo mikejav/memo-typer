@@ -41,7 +41,9 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const LessonOverviewLoaded: FC = () => {
-  const { lessonDetails } = useSelectedLessonSelector();
+  // TODO: selektor!!
+  const selectedLesson = useSelectedLessonSelector();
+  const lessonDetails = selectedLesson.data;
   const classes = useStyles();
 
   return (

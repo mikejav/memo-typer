@@ -11,7 +11,9 @@ import { LessonOverviewLoading } from 'pages/lesson-overview/lesson-overview-loa
 export const LessonOverview: FC = () => {
   const dispatch = useDispatch();
   const { lessonId } = useParams();
-  const { lessonDetails } = useSelectedLessonSelector();
+  const selectedLesson = useSelectedLessonSelector();
+  // TODO: maybe dodać selector do tego?
+  const lessonDetails = selectedLesson.data;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const loadAction = useCallback(() => dispatch(SelectedLessonEffects.loadSelectedLesson(lessonId!)), []);
   const cancelLoading = useCallback(() => console.log('TODO: loadingcancelation method: WIn win win!!2'), []);

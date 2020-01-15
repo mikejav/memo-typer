@@ -15,11 +15,13 @@ export const LessonsList: FC = () => {
 
   return (
     <Load
-      isLoaded={lessons.lessonsList.length}
+      isLoaded={lessons.lastFetchedAt && lessons.data.length}
+      // isLoadingErroed={lessons.error && lessons.data.length}
       loadAction={loadAction}
       cancelLoading={cancelLoading}
       LoadingComponent={LessonsListLoading}
       LoadedComponent={LessonsListLoaded}
+      // FailureComponent={FailureComponent}
     />
   );
 };

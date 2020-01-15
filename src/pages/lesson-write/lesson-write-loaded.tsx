@@ -10,7 +10,9 @@ import { RouterLink } from 'shared/components';
 import Typography from '@material-ui/core/Typography';
 
 export const LessonWriteLoaded: FC = () => {
-  const { lessonDetails } = useSelectedLessonSelector();
+  // TODO: selektor!!
+  const selectedLesson = useSelectedLessonSelector();
+  const lessonDetails = selectedLesson.data;
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const currentDefinitionPercentage = (currentPhraseIndex + 1) / (lessonDetails.phrases.length + 1) * 100;
 

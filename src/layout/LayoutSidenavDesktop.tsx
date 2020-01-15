@@ -3,6 +3,7 @@ import { Drawer } from '@material-ui/core';
 
 export const LayoutSidenavDesktop: FC = () => {
 
+  // TODO: ogarnąć ten komponent - maybe its useless
   return null;
   return (
     <Drawer variant={'permanent'}>

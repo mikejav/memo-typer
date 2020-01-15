@@ -8,7 +8,7 @@ export const LessonsListLoaded: FC = () => {
 
   return (
     <Grid container spacing={2}>
-      {lessons.lessonsList.map(lesson => (
+      {lessons.data.map(lesson => (
         <Grid item style={{ display: 'flex' }} xs={12} sm={6} md={4} key={lesson.id}>
           <LessonCard lesson={lesson}/>
         </Grid>
