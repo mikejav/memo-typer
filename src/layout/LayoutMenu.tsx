@@ -12,6 +12,7 @@ import {
   Theme
 } from '@material-ui/core';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
+import TimelineRoundedIcon from '@material-ui/icons/TimelineRounded';
 import { RouterLink } from 'shared/components';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -58,8 +59,8 @@ export const LayoutMenu: FC<LayoutMenuProps> = ({ isMenuOpen, anchorEl, onMenuCl
           <ListItemIcon><InboxIcon/></ListItemIcon>
           <ListItemText primary={'Ulubione'}/>
         </ListItem>
-        <ListItem button>
-          <ListItemIcon><InboxIcon/></ListItemIcon>
+        <ListItem button component={RouterLink} to='/insights'>
+          <ListItemIcon><TimelineRoundedIcon/></ListItemIcon>
           <ListItemText primary={'Statystyki'}/>
         </ListItem>
         <ListItem button>
@@ -72,6 +73,5 @@ export const LayoutMenu: FC<LayoutMenuProps> = ({ isMenuOpen, anchorEl, onMenuCl
         </ListItem>
       </List>
     </Popover>
-
   );
 };
