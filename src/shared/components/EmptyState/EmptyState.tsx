@@ -12,8 +12,9 @@ const useStyles = makeStyles((theme: Theme) => {
       alignItems: 'center',
       justifyContent: 'center',
       paddingBottom: theme.spacing(3),
+      textAlign: 'center',
     }
-  })
+  });
 });
 
 export const EmptyState: FC = ({ children }) => {
