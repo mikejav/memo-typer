@@ -1,5 +1,4 @@
 import { createAction } from '@reduxjs/toolkit';
-import { LessonBasic } from 'models/LessonBasic';
 
 export abstract class LayoutActions {
   public static openMobileSidenav = createAction('layout/OPEN_MOBILE_SIDENAV');
