@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { InsightsEffects } from 'state/insights/insights.effects';
 import { InsightsLoading } from 'pages/insights/insights-loading';
 import { InsightsLoaded } from 'pages/insights/insights-loaded';
+import { useInsightsSelector } from 'state/insights/insights.selectors';
 
 export const Insights: FC = () => {
   const dispatch = useDispatch();
