@@ -10,7 +10,7 @@ import { Container, createStyles, makeStyles, Theme, useMediaQuery, useTheme } f
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
-      paddingTop: '1rem',
+      paddingTop: theme.spacing(2),
       flexGrow: 1,
       display: 'flex',
       flexDirection: 'column'
