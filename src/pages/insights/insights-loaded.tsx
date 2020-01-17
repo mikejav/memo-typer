@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { useInsightsSelector } from 'selectors';
 import { InsightsEmptyState } from 'pages/insights/insights-empty-state';
+import { useInsightsSelector } from 'state/insights/insights.selectors';
 
 export const InsightsLoaded: FC = () => {
   const insights = useInsightsSelector();

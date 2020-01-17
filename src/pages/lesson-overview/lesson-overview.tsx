@@ -1,11 +1,11 @@
 import React, { FC, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { SelectedLessonEffects } from 'state/selectedLesson/selected-lesson.effects';
-import { useSelectedLessonSelector } from 'selectors';
 import { useDispatch } from 'react-redux';
 import { Load } from 'shared/components';
 import { LessonOverviewLoaded } from 'pages/lesson-overview/lesson-overview-loaded';
 import { LessonOverviewLoading } from 'pages/lesson-overview/lesson-overview-loading';
+import { useSelectedLessonSelector } from 'state/selectedLesson/selected-lesson.selectors';
 
 
 export const LessonOverview: FC = () => {

@@ -1,5 +1,4 @@
 import React, { FC, Fragment, useState } from 'react';
-import { useSelectedLessonSelector } from 'selectors';
 import { WriteCard } from 'pages/lesson-write/components/WriteCard';
 import Card from '@material-ui/core/Card';
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -8,6 +7,7 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 import { RouterLink } from 'shared/components';
 import Typography from '@material-ui/core/Typography';
+import { useSelectedLessonSelector } from 'state/selectedLesson/selected-lesson.selectors';
 
 export const LessonWriteLoaded: FC = () => {
   // TODO: selektor!!

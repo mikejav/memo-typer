@@ -19,8 +19,8 @@ import {
 } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone';
-import { useSelectedLessonSelector } from 'selectors';
 import makeStyles from '@material-ui/core/styles/makeStyles';
+import { useSelectedLessonSelector } from 'state/selectedLesson/selected-lesson.selectors';
 
 
 const useStyles = makeStyles((theme: Theme) =>

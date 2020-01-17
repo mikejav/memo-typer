@@ -1,10 +1,10 @@
 import React, { FC, useCallback } from 'react';
-import { useLessonsSelector } from 'selectors';
 import { LessonsEffects } from 'state/lessons/lessons.effects';
 import { useDispatch } from 'react-redux';
 import { Load } from 'shared/components';
 import { LessonsListLoaded } from 'pages/level-list/lessons-list-loaded';
 import { LessonsListLoading } from 'pages/level-list/lessons-list-loading';
+import { useLessonsSelector } from 'state/lessons/lessons.selectors';
 
 export const LessonsList: FC = () => {
   const dispatch = useDispatch();
