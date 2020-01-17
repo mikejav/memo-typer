@@ -21,12 +21,12 @@ const useStyles = makeStyles((theme: Theme) =>
 export const Layout: FC = ({ children }) => {
   const theme = useTheme();
   const classes = useStyles();
-  const isDownSmallDevice = useMediaQuery(theme.breakpoints.down('md'));
+  const isDownMediumDevice = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <LayoutContainer>
       <LayoutHeader/>
-      {isDownSmallDevice && <LayoutSidenavMobile/>}
+      {isDownMediumDevice && <LayoutSidenavMobile/>}
       <LayoutMain>
         <LayoutSidenavDesktop/>
         <LayoutMainContent>

@@ -12,6 +12,7 @@ export const LayoutSidenavMobile: FC = () => {
 
   useEffect(() => () => {
     closeMenu();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -35,7 +35,7 @@ export const LayoutHeader: FC = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const theme = useTheme();
-  const isDownSmallDevice = useMediaQuery(theme.breakpoints.down('md'));
+  const isDownMediumDevice = useMediaQuery(theme.breakpoints.down('md'));
   const isMenuOpen = Boolean(anchorEl);
 
   const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -46,6 +46,7 @@ export const LayoutHeader: FC = () => {
     setAnchorEl(null);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const toggleMobileMenu = useCallback(() => dispatch(LayoutActions.toggleMobileSidenav()), []);
 
   return (
@@ -53,7 +54,7 @@ export const LayoutHeader: FC = () => {
       <Container maxWidth="md">
         <Toolbar variant="regular" disableGutters={true}>
           {
-            isDownSmallDevice &&
+            isDownMediumDevice &&
             <IconButton
               edge="start"
               className={classes.menuButton}
