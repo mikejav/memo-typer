@@ -1,7 +1,7 @@
 import { LessonOverview, LessonsList } from 'pages';
 import React, { Fragment } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import { Container, CssBaseline, ThemeProvider } from '@material-ui/core';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { LessonWrite } from 'pages/lesson-write/lesson-write';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import { Layout } from 'layout';

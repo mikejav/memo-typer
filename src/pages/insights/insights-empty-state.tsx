@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
 import {
   EmptyState,
-  EmptyStateActionPrimary,
   EmptyStateActions,
-  EmptyStateActionSecondary,
   EmptyStatePicture,
   EmptyStateTextPrimary,
   EmptyStateTextSecondary
@@ -15,14 +13,19 @@ import { Button } from '@material-ui/core';
 export const InsightsEmptyState: FC = () => {
   return (
     <EmptyState>
-      <EmptyStatePicture><TimelineIcon/></EmptyStatePicture>
+      <EmptyStatePicture>
+        {/*TODO: zmienić picture na jakiś większy a nie taka mała ikona*/}
+        <TimelineIcon/>
+      </EmptyStatePicture>
       <EmptyStateTextPrimary>Empty insights</EmptyStateTextPrimary>
-      <EmptyStateTextSecondary>You have no statistic data</EmptyStateTextSecondary>
+      <EmptyStateTextSecondary>
+        You have no statistic data You have no statistic data You have no statistic data You have no statistic data.
+        <br/>
+        You have no statistic data You have no statistic data.
+      </EmptyStateTextSecondary>
       <EmptyStateActions>
-        <EmptyStateActionPrimary>
-          <Button variant={'contained'} color={'primary'}>Primary action</Button>
-        </EmptyStateActionPrimary>
-        <EmptyStateActionSecondary>TODO: secondary action eg link</EmptyStateActionSecondary>
+        <Button variant={'contained'} color={'primary'}>Primary action</Button>
+        {/*TODO: secondary action eg link*/}
       </EmptyStateActions>
     </EmptyState>
   );

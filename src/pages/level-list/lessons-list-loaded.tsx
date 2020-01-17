@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useLessonsSelector } from 'selectors';
 import Grid from '@material-ui/core/Grid';
-import { LessonCard } from 'pages/level-list/components/LessonCard';
+import { LessonCard } from 'pages/level-list/components/lesson-card';
 
 export const LessonsListLoaded: FC = () => {
   const lessons = useLessonsSelector();
