@@ -9,6 +9,7 @@ import { InsightsLoaded } from 'pages/insights/insights-loaded';
 export const Insights: FC = () => {
   const dispatch = useDispatch();
   const insights = useInsightsSelector();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const loadAction = useCallback(() => dispatch(InsightsEffects.load()), []);
 
   return (

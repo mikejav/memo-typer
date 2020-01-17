@@ -1,8 +1,8 @@
 import React, { FC, useCallback, useEffect } from 'react';
 import { Drawer } from '@material-ui/core';
-import { useLayoutSelector } from 'selectors/layout';
 import { useDispatch } from 'react-redux';
 import { LayoutActions } from 'state/layout/layout.actions';
+import { useLayoutSelector } from 'state/layout/layout.selectors';
 
 export const LayoutSidenavMobile: FC = () => {
   const { isMobileSidenavOpen } = useLayoutSelector();
