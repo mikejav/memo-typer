@@ -25,7 +25,7 @@ export const Layout: FC = ({ children }) => {
 
   return (
     <LayoutContainer>
-      <LayoutHeader/>
+      <LayoutHeader showSidenavHamburger={isDownMediumDevice}/>
       {isDownMediumDevice && <LayoutSidenavMobile/>}
       <LayoutMain>
         <LayoutSidenavDesktop/>
