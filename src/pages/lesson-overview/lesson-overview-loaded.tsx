@@ -20,22 +20,32 @@ import {
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import StarTwoToneIcon from '@material-ui/icons/StarTwoTone';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import { useSelectedLessonSelector } from 'state/selectedLesson/selected-lesson.selectors';
+import { useSelectedLessonDataSelector } from 'state/selectedLesson/selected-lesson.selectors';
 
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     card: {
       display: 'flex',
-      marginBottom: '0.75rem'
+      flexDirection: 'column',
+      marginBottom: theme.spacing(2),
+      [theme.breakpoints.up('sm')]: {
+        flexDirection: 'row'
+      }
+    },
+    cover: {
+      width: '100%',
+      height: 140,
+      backgroundColor: theme.palette.action.hover,
+      [theme.breakpoints.up('sm')]: {
+        width: 200,
+        height: 'auto'
+      }
     },
     detailsGroup: {
       flex: '1 1 auto',
       display: 'flex',
       flexDirection: 'column'
-    },
-    cover: {
-      width: 151
     }
   })
 );
@@ -46,14 +56,15 @@ export const LessonOverviewLoaded: FC = () => {
 
   return (
     <Fragment>
+      {/*TODO: breadcrumbsy można ukrywać na mobilce*/}
       <Breadcrumbs>
         <Link color="inherit" component={RouterLink} to='/'>Home</Link>
-        <Typography color="textPrimary">{lessonDetails.name}</Typography>
+        <Typography color="textPrimary">{selectedLessonDetails.name}</Typography>
       </Breadcrumbs>
       <Card className={classes.card}>
         <CardMedia
           className={classes.cover}
-          image={lessonDetails.coverLink}
+          image={selectedLessonDetails.coverLink}
           title="Live from space album cover"
         />
         <div className={classes.detailsGroup}>
