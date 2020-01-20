@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const partsWidthPercentage = [10, 20, 10, 10];
+const partsWidthPercentage = [10, 20, 15, 10];
 
 interface BreadcrumbsLoadingProps {
   partsNumber: 1 | 2 | 3 | 4;
