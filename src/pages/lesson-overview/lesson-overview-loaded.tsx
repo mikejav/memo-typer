@@ -41,9 +41,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const LessonOverviewLoaded: FC = () => {
-  // TODO: selektor!!
-  const selectedLesson = useSelectedLessonSelector();
-  const lessonDetails = selectedLesson.data;
+  const selectedLessonDetails = useSelectedLessonDataSelector();
   const classes = useStyles();
 
   return (
@@ -65,11 +63,12 @@ export const LessonOverviewLoaded: FC = () => {
                 <MoreVertIcon/>
               </IconButton>
             }
-            title={lessonDetails.name}
-            subheader={lessonDetails.description}
+            title={selectedLessonDetails.name}
+            subheader={selectedLessonDetails.description}
           />
           <CardActions>
-            <Button size="small" color="primary" component={RouterLink} to={`/lesson/${lessonDetails.id}/write`}>
+            <Button size="small" color="primary" component={RouterLink}
+                    to={`/lesson/${selectedLessonDetails.id}/write`}>
               Pisz
             </Button>
             <Button size="small" color="primary">
@@ -80,7 +79,7 @@ export const LessonOverviewLoaded: FC = () => {
       </Card>
       <Card>
         <List disablePadding>
-          {lessonDetails.phrases.map((phrase) => (
+          {selectedLessonDetails.phrases.map((phrase) => (
             <Fragment key={phrase.id}>
               <ListItem divider>
                 <ListItemText primary={phrase.term} style={{ width: '0%' }}/>

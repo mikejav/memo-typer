@@ -41,7 +41,7 @@ export abstract class SelectedLessonEffects {
 
     setTimeout(() => {
       dispatch(SelectedLessonActions.loadSuccess(returnLessonDetails));
-    }, 500);
+    }, lessonId === '2' ? 5000000 : 500);
 
   };
 }
