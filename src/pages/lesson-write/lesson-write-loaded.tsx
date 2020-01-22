@@ -8,6 +8,7 @@ import Link from '@material-ui/core/Link';
 import { RouterLink } from 'shared/components';
 import Typography from '@material-ui/core/Typography';
 import { useSelectedLessonSelector } from 'state/selectedLesson/selected-lesson.selectors';
+import { CardContent } from '@material-ui/core';
 
 export const LessonWriteLoaded: FC = () => {
   // TODO: selektor!!
@@ -31,7 +32,9 @@ export const LessonWriteLoaded: FC = () => {
       {lessonDetails.phrases.length && (
         <Card style={{ textAlign: 'center' }}>
           {currentPhraseIndex === lessonDetails.phrases.length ? (
-            <span>U R awesome!</span>
+            <CardContent>
+              TODO: U R awesome content! Nie jesteś zalogowany. ZALOGUJ SIĘ aby śledzić swoje postępy
+            </CardContent>
           ) : (
             <Fragment>
               <LinearProgress variant='determinate' value={currentDefinitionPercentage}/>
