@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
-import { LessonBasic } from 'models/LessonBasic';
+import { Subject } from 'models/Subject';
 import { CardActionArea, createStyles, makeStyles, Theme } from '@material-ui/core';
 import { RouterLink } from 'shared/components';
 
@@ -27,11 +27,11 @@ const useStyles = makeStyles((theme: Theme) => {
   }
 );
 
-interface LessonCardProps {
-  lesson: LessonBasic,
+interface SubjectCardProps {
+  lesson: Subject,
 }
 
-export const LessonCard: FC<LessonCardProps> = ({ lesson }) => {
+export const SubjectCard: FC<SubjectCardProps> = ({ lesson }) => {
   const classes = useStyles();
 
   return (

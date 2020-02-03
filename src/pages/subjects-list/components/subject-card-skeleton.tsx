@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export const LessonCardSkeleton: FC = () => {
+export const SubjectCardSkeleton: FC = () => {
   const classes = useStyles();
 
   return (
