@@ -1,10 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { SubjectsActions } from 'state/entities/lessons/subjects.actions';
+import { SubjectsActions } from 'state/entities/subjects/subjects.actions';
 import { Subject } from 'models/Subject';
-
-export type EntityObject<T> = {
-  [key: string]: T
-};
+import { EntityObject } from 'shared/interfaces/EntityObject';
 
 const initialState: EntityObject<Subject> = {};
 
@@ -16,14 +13,14 @@ export const subjectsReducer = createReducer(initialState,
     })
 
     .addCase(SubjectsActions.addSubjects, (state, { payload }) => {
-      const initialAcc = {} as EntityObject<Subject>;
+      // if payload were array:
+      // const initialAcc = {} as EntityObject<Subject>;
+      // const newSubjects = payload.reduce((acc, currentSubject) => {
+      //   acc['currentSubject.id'] = currentSubject;
+      //   return acc;
+      // }, initialAcc);
 
-      const newSubjects = payload.reduce((acc, currentSubject) => {
-        acc['currentSubject.id'] = currentSubject;
-        return acc;
-      }, initialAcc);
-
-      Object.assign(state, newSubjects);
+      Object.assign(state, payload);
     })
 
     .addCase(SubjectsActions.removeSubject, (state, { payload }) => {
