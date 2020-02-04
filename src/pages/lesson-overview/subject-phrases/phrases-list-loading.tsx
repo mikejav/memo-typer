@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export const PhraseListLoading: FC = () => {
+export const PhrasesListLoading: FC = () => {
   const classes = useStyles();
 
   return (
