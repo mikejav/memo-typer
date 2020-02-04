@@ -1,7 +1,6 @@
 import React, { FC, Fragment } from 'react';
 import { BreadcrumbsLoading } from 'shared/components/BreadcrumbsLoading/BreadcrumbsLoading';
-import { OverviewCardLoading } from 'pages/lesson-overview/components/overview-card-loading';
-import { PhraseListLoading } from 'pages/lesson-overview/components/phrase-list-loading';
+import { OverviewCardLoading } from 'pages/lesson-overview/subject-overview/overview-card-loading';
 
 
 export const LessonOverviewLoading: FC = () => {
@@ -10,7 +9,6 @@ export const LessonOverviewLoading: FC = () => {
     <Fragment>
       <BreadcrumbsLoading partsNumber={2}/>
       <OverviewCardLoading/>
-      <PhraseListLoading/>
     </Fragment>
   );
 };

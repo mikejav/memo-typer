@@ -4,6 +4,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { RouterLink } from 'shared/components';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import { LessonDetails } from 'models/LessonDetails';
+import { Subject } from 'models/Subject';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -34,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface OverviewCardProps {
-  lessonDetails: LessonDetails;
+  lessonDetails: Subject;
 }
 
 export const OverviewCard: FC<OverviewCardProps> = ({ lessonDetails }) => {

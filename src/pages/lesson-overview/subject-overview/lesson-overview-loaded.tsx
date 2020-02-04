@@ -1,13 +1,12 @@
 import React, { FC, Fragment } from 'react';
 import { RouterLink } from 'shared/components';
 import { Breadcrumbs, Link, Typography } from '@material-ui/core';
-import { useSelectedLessonDataSelector } from 'state/selectedLesson/selected-lesson.selectors';
-import { OverviewCard } from 'pages/lesson-overview/components/overview-card';
-import { PhraseList } from 'pages/lesson-overview/components/phrase-list';
+import { OverviewCard } from 'pages/lesson-overview/subject-overview/overview-card';
+import { useSubjectPageSubjectSelector } from 'state/pages/subject-page/subject-page.selectors';
 
 
 export const LessonOverviewLoaded: FC = () => {
-  const selectedLessonDetails = useSelectedLessonDataSelector();
+  const selectedLessonDetails = useSubjectPageSubjectSelector()!;
 
   return (
     <Fragment>
@@ -17,7 +16,6 @@ export const LessonOverviewLoaded: FC = () => {
         <Typography color="textPrimary">{selectedLessonDetails.name}</Typography>
       </Breadcrumbs>
       <OverviewCard lessonDetails={selectedLessonDetails}/>
-      <PhraseList phrases={selectedLessonDetails.phrases}/>
     </Fragment>
   );
 };
