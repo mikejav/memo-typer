@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -8,6 +8,8 @@ import Card from '@material-ui/core/Card';
 import { Subject } from 'models/Subject';
 import { CardActionArea, createStyles, makeStyles, Theme } from '@material-ui/core';
 import { RouterLink } from 'shared/components';
+import { useDispatch } from 'react-redux';
+import { SubjectPageActions } from 'state/pages/subject-page/subject-page.actions';
 
 const useStyles = makeStyles((theme: Theme) => {
     return createStyles({
@@ -28,31 +30,42 @@ const useStyles = makeStyles((theme: Theme) => {
 );
 
 interface SubjectCardProps {
-  lesson: Subject,
+  subject: Subject,
 }
 
-export const SubjectCard: FC<SubjectCardProps> = ({ lesson }) => {
+export const SubjectCard: FC<SubjectCardProps> = ({ subject }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const setSelectedSubject = useCallback(() => {
+    dispatch(SubjectPageActions.setSubjectId(subject.id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [subject.id]);
 
   return (
     <Card className={classes.card}>
-      <CardActionArea component={RouterLink} to={`/lesson/${lesson.id}`} className={classes.actionArea}>
+      <CardActionArea
+        component={RouterLink}
+        to={`/lesson/${subject.id}`}
+        onClick={setSelectedSubject}
+        className={classes.actionArea}
+      >
         <CardMedia
-          image={lesson.coverLink}
-          title={lesson.name}
+          image={subject.coverLink}
+          title={subject.name}
           className={classes.coverImage}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {lesson.name}
+            {subject.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {lesson.description}
+            {subject.description}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" component={RouterLink} to={`/lesson/${lesson.id}/write`}>
+        <Button size="small" color="primary" component={RouterLink} to={`/lesson/${subject.id}/write`}>
           Pisz
         </Button>
         <Button size="small" color="primary">
