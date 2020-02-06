@@ -18,7 +18,6 @@ export const rootReducer = combineReducers({
     subjects: subjectsPageReducer,
     subject: subjectPageReducer,
   }),
-  selectedLesson: selectedLessonReducer,
   layout: layoutReducer,
   insights: insightsReducer,
 });
