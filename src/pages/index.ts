@@ -1,7 +1,7 @@
 import { LessonOverview } from 'pages/lesson-overview/lesson-overview';
-import { LessonsList } from 'pages/level-list/lessons-list';
+import { SubjectsList } from 'pages/subjects-list/subjects-list';
 
 export {
-  LessonsList,
+  SubjectsList,
   LessonOverview,
 };

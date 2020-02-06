@@ -1,10 +1,11 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, Fragment, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { Load } from 'shared/components';
 import { SubjectsListLoaded } from 'pages/subjects-list/subjects-list-loaded';
 import { SubjectsListLoading } from 'pages/subjects-list/subjects-list-loading';
-import { useSubjectsPageMetaSelector } from 'state/pages/subjects-page/subjects-page.selector';
+import { useSubjectsPageMetaSelector } from 'state/pages/subjects-page/subjects-page.selectors';
 import { SubjectsPageService } from 'state/pages/subjects-page/subjects-page.service';
+import { AddSubjectFormModal } from 'pages/subjects-list/components/add-subject-form-modal';
 
 export const SubjectsList: FC = () => {
   const dispatch = useDispatch();
@@ -14,14 +15,17 @@ export const SubjectsList: FC = () => {
   const cancelLoading = useCallback(() => console.log('TODO: loadingcancelation method: WIn win win!!1'), []);
 
   return (
-    <Load
-      isLoaded={subjectsPageMeta.lastFetchedAt && subjectsPageMeta.subjectsIds.length}
-      // isLoadingErroed={subjects.error && subjects.data.length}
-      loadAction={loadAction}
-      cancelLoading={cancelLoading}
-      LoadingComponent={SubjectsListLoading}
-      LoadedComponent={SubjectsListLoaded}
-      // FailureComponent={FailureComponent}
-    />
+    <Fragment>
+      <Load
+        isLoaded={subjectsPageMeta.lastFetchedAt && subjectsPageMeta.subjectsIds.length}
+        // isLoadingErroed={subjects.error && subjects.data.length}
+        loadAction={loadAction}
+        cancelLoading={cancelLoading}
+        LoadingComponent={SubjectsListLoading}
+        LoadedComponent={SubjectsListLoaded}
+        // FailureComponent={FailureComponent}
+      />
+      <AddSubjectFormModal/>
+    </Fragment>
   );
 };
