@@ -1,6 +1,6 @@
 import React, { FC, Fragment } from 'react';
 import { BreadcrumbsLoading } from 'shared/components/BreadcrumbsLoading/BreadcrumbsLoading';
-import { OverviewCardLoading } from 'pages/lesson-overview/subject-overview/overview-card-loading';
+import { OverviewCardLoading } from 'pages/lesson-overview/lesson-overview/overview-card-loading';
 
 
 export const LessonOverviewLoading: FC = () => {

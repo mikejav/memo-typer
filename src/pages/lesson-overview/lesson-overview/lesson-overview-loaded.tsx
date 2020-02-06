@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from 'react';
 import { RouterLink } from 'shared/components';
 import { Breadcrumbs, Link, Typography } from '@material-ui/core';
-import { OverviewCard } from 'pages/lesson-overview/subject-overview/overview-card';
+import { OverviewCard } from 'pages/lesson-overview/lesson-overview/overview-card';
 import { useSubjectPageSubjectSelector } from 'state/pages/subject-page/subject-page.selectors';
 
 
