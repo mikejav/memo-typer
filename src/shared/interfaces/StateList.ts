@@ -1,6 +1,6 @@
-export interface State<TData> {
+export interface StateList<TData> {
   isFetching: boolean;
   error: any | null;
   lastFetchedAt: number;
-  data: TData;
+  ids: string[];
 }
