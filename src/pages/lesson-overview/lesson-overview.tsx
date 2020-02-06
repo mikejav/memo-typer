@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useCallback, useEffect } from 'react';
+import React, { FC, Fragment, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Load } from 'shared/components';
@@ -9,9 +9,8 @@ import {
   useSubjectPageSubjectSelector
 } from 'state/pages/subject-page/subject-page.selectors';
 import { SubjectPageService } from 'state/pages/subject-page/subject-page.service';
-import { SubjectPageActions } from 'state/pages/subject-page/subject-page.actions';
-import { SubjectPhrasesLoading } from 'pages/lesson-overview/subject-phrases/subject-phrases-loading';
-import { SubjectPhrasesLoaded } from 'pages/lesson-overview/subject-phrases/subject-phrases-loaded';
+import { PhrasesListLoading } from 'pages/lesson-overview/subject-phrases/phrases-list-loading';
+import { PhraseList } from 'pages/lesson-overview/subject-phrases/phrase-list';
 
 
 export const LessonOverview: FC = () => {
@@ -33,15 +32,15 @@ export const LessonOverview: FC = () => {
         isLoaded={selectedSubject?.id === subjectId}
         loadAction={loadSubjectCallback}
         cancelLoading={cancelSubjectLoadingCallback}
-        LoadingComponent={LessonOverviewLoading}
-        LoadedComponent={LessonOverviewLoaded}
+        loadingComponent={<LessonOverviewLoading/>}
+        loadedComponent={<LessonOverviewLoaded/>}
       />
       <Load
         isLoaded={selectedSubjectPhrases}
         loadAction={loadSubjectPhrasesCallback}
         cancelLoading={cancelSubjectPhrasesLoadingCallback}
-        LoadingComponent={SubjectPhrasesLoading}
-        LoadedComponent={SubjectPhrasesLoaded}
+        loadingComponent={<PhrasesListLoading/>}
+        loadedComponent={<PhraseList phrases={selectedSubjectPhrases!}/>}
       />
     </Fragment>
   );

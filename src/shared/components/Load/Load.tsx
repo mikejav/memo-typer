@@ -4,12 +4,12 @@ interface LoadProps {
   loadAction: Function;
   isLoaded: any;
   cancelLoading?: Function;
-  LoadingComponent: FC;
-  LoadedComponent: FC;
+  loadingComponent: JSX.Element;
+  loadedComponent: JSX.Element;
 }
 
 export const Load: FC<LoadProps> = (
-  { loadAction, isLoaded, cancelLoading, LoadingComponent, LoadedComponent }
+  { loadAction, isLoaded, cancelLoading, loadingComponent, loadedComponent }
 ) => {
   const isLoadingTriggeredRef = useRef(false);
 
@@ -32,7 +32,7 @@ export const Load: FC<LoadProps> = (
 
   if (isLoaded) {
     isLoadingTriggeredRef.current = false;
-    return <LoadedComponent/>;
+    return loadedComponent;
   }
-  return <LoadingComponent/>;
+  return loadingComponent;
 };

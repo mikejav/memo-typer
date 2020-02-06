@@ -16,8 +16,8 @@ export const Insights: FC = () => {
     <Load
       isLoaded={insights.lastFetchedAt}
       loadAction={loadAction}
-      LoadingComponent={InsightsLoading}
-      LoadedComponent={InsightsLoaded}
+      loadingComponent={<InsightsLoading/>}
+      loadedComponent={<InsightsLoaded/>}
     />
   );
 };

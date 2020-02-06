@@ -43,8 +43,8 @@ export const LessonWrite: FC = () => {
       isLoaded={isLessonLoaded && arePhrasesLoaded}
       loadAction={loadAction}
       cancelLoading={cancelLoading}
-      LoadingComponent={LessonWriteLoading}
-      LoadedComponent={LessonWriteLoaded}
+      loadingComponent={<LessonWriteLoading/>}
+      loadedComponent={<LessonWriteLoaded/>}
     />
   );
 };

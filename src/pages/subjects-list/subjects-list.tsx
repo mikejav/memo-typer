@@ -21,8 +21,8 @@ export const SubjectsList: FC = () => {
         // isLoadingErroed={subjects.error && subjects.data.length}
         loadAction={loadAction}
         cancelLoading={cancelLoading}
-        LoadingComponent={SubjectsListLoading}
-        LoadedComponent={SubjectsListLoaded}
+        loadingComponent={<SubjectsListLoading/>}
+        loadedComponent={<SubjectsListLoaded/>}
         // FailureComponent={FailureComponent}
       />
       <AddSubjectFormModal/>

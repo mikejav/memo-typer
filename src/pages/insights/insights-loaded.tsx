@@ -6,7 +6,8 @@ export const InsightsLoaded: FC = () => {
   const insights = useInsightsSelector();
 
   return (
-    insights.data.lastActivity
+    // insights.data.lastActivity
+    true
       ? <InsightsEmptyState/>
       : <div>TODO: wyświetl jakieś statystyki</div>
   );
