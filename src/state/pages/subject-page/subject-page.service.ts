@@ -1,12 +1,12 @@
 import { ThunkResult } from 'state/ThunkResult';
 import { FirebaseApp } from 'state/firebaseApp';
-import { Subject } from 'models/Subject';
 import { batch } from 'react-redux';
 import { SubjectsActions } from 'state/entities/subjects/subjects.actions';
 import { SubjectPageActions } from 'state/pages/subject-page/subject-page.actions';
 import { PhrasesActions } from 'state/entities/phrases/phrases.actions';
 import { Phrase } from 'models/Phrase';
 import { EntityObject } from 'shared/interfaces/EntityObject';
+import { StoreSubject } from 'state/entities/subjects/store-subject.type';
 
 export abstract class SubjectPageService {
 
@@ -19,12 +19,12 @@ export abstract class SubjectPageService {
         return;
       }
 
-      const subject = doc.data() as Subject;
+      const subject = doc.data()!;
       subject['id'] = doc.id;
 
       batch(() => {
-        dispatch(SubjectsActions.addSubject(subject));
-        dispatch(SubjectPageActions.loadSubjectSuccess(subject));
+        dispatch(SubjectsActions.addSubject(subject as StoreSubject));
+        dispatch(SubjectPageActions.loadSubjectSuccess(subject as StoreSubject));
       });
     });
   };
@@ -40,6 +40,7 @@ export abstract class SubjectPageService {
       console.log('phrases:', phrases);
       batch(() => {
         dispatch(PhrasesActions.addPhrases(phrases));
+        dispatch(SubjectsActions.pathSubject({id: subjectId, phrases: Object.keys(phrases)}));
         dispatch(SubjectPageActions.loadSubjectPhrasesSuccess(phrases));
       });
     });
